@@ -5,5 +5,5 @@ COPY cattle.csv /var/lib/mysql-files/
 COPY init_db.sql /
 docker-entrypoint-initdb.d/
 
-ENV NSqlPass=asdfasdf
-ENV NSql=csc468
+ENV MYSQL_ROOT_PASSWORD=NSqlPass
+ENV MYSQL_DATABASE=csc468
