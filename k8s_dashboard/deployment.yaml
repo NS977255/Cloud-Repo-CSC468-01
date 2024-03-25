@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql-deployment
+  namespace: nick
+spec:
+  selector:
+    matchLabels:
+      app: mysql
+  template:
+    metadata:
+      labels:
+        app: mysql
+    spec:
+      containers:
+      - name: mysql
+        image: nick36/
+hw4image:latest
+        env:
+          - name: MYSQL_ROOT_PASSWORD
+            value: "password"
+          - name: MYSQL_DATABASE
+            value: csc468
+        ports:
+          - containerPorts: 3306
